@@ -1,0 +1,103 @@
+/* Existing styles... */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .lightbox-prev,
+  .lightbox-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    padding: 16px;
+    z-index: 1001;
+  }
+  
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+  
+  .lightbox-image {
+    max-width: 80%;
+    max-height: 80vh;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+.gallery-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    column-count: 4; /* Four columns by default */
+    column-gap: 1rem; /* Space between columns */
+  }
+  
+  @media (max-width: 992px) {
+    .gallery-container {
+      column-count: 3; /* Three columns for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-container {
+      column-count: 2; /* Two columns for small screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .gallery-container {
+      column-count: 1; /* One column for extra small screens */
+    }
+  }
+  
+  .gallery-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+    margin-bottom: 1rem; /* Space between items */
+    cursor: pointer;
+    display: inline-block; /* This can help with vertical alignment issues */
+    width: 100%;
+  }
+
+  .gallery-image {
+    width: 100%; /* Full width of the parent */
+    height: auto; /* Keep the original aspect ratio */
+    display: block; /* Correct display for images */
+    object-fit: cover; /* Cover the area of the item */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .gallery-col {
+    margin-bottom: 16px;
+  }
+  .gallery-image:hover {
+    transform: scale(1.05); /* Scale up image slightly on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  }
+  
